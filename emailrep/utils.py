@@ -50,10 +50,8 @@ emailrep setup -k <your api key>
     parser.add_argument('--proxy', help=(
                         'Proxy to use for requests. Example: "socks5://10.10.10.10:8000"'
                         ), action='store', dest='proxy', type=str, required=False),
-    parser.add_argument('-k', '--key', help='API key',
-                        action='store', dest='key', type=str, required=False),
 
-    args = parser.parse_args()
+    args, unknown = parser.parse_known_args()
 
     if len(sys.argv) <= 1:
         parser.print_help()
